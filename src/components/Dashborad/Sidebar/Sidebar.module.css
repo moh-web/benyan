@@ -1,0 +1,15 @@
+.sideBar{
+        min-height: 88.8vh;
+    background: var(--main-color);
+    border-bottom: none;
+    width: 200px;
+}
+.navItem{
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+}
+.navItem:hover{
+    background: rgb(255, 255, 255, 0.25);
+}
