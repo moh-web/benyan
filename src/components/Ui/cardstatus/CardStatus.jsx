@@ -1,6 +1,6 @@
 import style from "./CardStatus.module.css"
 
-export default function CardStatus() {
+export default function CardStatus({number,title}) {
   return (
     <div className={`${style.cardStatus} d-flex align-items-center justify-content-around `}>
                             {/* icon parent */}
@@ -13,8 +13,8 @@ export default function CardStatus() {
                             {/* info*/}
                             <div className={`${style.info} d-flex align-items-center flex-column`} >
     
-                            <span className="counter">120</span>
-                            <span className={style.title}>projects</span>
+                            <span className="counter">{number}</span>
+                            <span className={style.title}>{title}</span>
                             </div>
                             </div>
   )
