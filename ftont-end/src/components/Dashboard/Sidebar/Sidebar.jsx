@@ -1,7 +1,7 @@
 import style from "./Sidebar.module.css";
 import {NavLink } from "react-router-dom";
 
- function Sidebar() {
+ function Sidebar({typing, focused}) {
     const links = [
         {icon: "fa-chart-bar", title: "status", path: "/"},
         {icon: "fa-users", title: "Users Management", path: "/users"},
@@ -11,7 +11,7 @@ import {NavLink } from "react-router-dom";
         {icon: "fa-message", title: "Live Chat"},
         
     ]
-console.log(style);
+
   return (
     <aside className={`${style.sideBar} min-vh-85.7 p-3 text-white`}>
         <div className="fw-semibold px-4 mb-3 fs-4">
@@ -22,7 +22,9 @@ console.log(style);
         <NavLink to={link.path} className={`${style.navItem} d-flex align-items-center gap-3 p-2 text-decoration-none`} key={index}>
             <i className={`fa-solid ${link.icon}`}></i>
             <span>{link.title}</span>
+            {link.title == "Users Management" && typing && focused && <p style={{fontSize: "0.7rem"}}>typing...</p>}
         </NavLink>
+        
     ))}
 </nav>
     </aside>
